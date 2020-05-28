@@ -1,0 +1,22 @@
+2020-05-13 11:38:39.166  INFO 19816 --- [main] c.d.mall.website.MallWebsiteApplication  : Starting MallWebsiteApplication on DESKTOP-B58BN7H with PID 19816 (E:\stephen\ChewSweetGarden\choiHeongYuenBakery\mall-website\target\classes started by PC in E:\stephen\ChewSweetGarden\choiHeongYuenBakery)
+2020-05-13 11:38:39.169  INFO 19816 --- [main] c.d.mall.website.MallWebsiteApplication  : No active profile set, falling back to default profiles: default
+2020-05-13 11:38:40.182  INFO 19816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-05-13 11:38:40.190  INFO 19816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-13 11:38:40.190  INFO 19816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-13 11:38:40.272  INFO 19816 --- [main] o.a.c.c.C.[.[localhost].[/website]       : Initializing Spring embedded WebApplicationContext
+2020-05-13 11:38:40.272  INFO 19816 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 990 ms
+2020-05-13 11:38:40.402  INFO 19816 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-05-13 11:38:40.517  INFO 19816 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-05-13 11:38:40.788  INFO 19816 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-13 11:38:40.964  WARN 19816 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-05-13 11:38:41.036  INFO 19816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8087 (http) with context path '/website'
+2020-05-13 11:38:41.039  INFO 19816 --- [main] c.d.mall.website.MallWebsiteApplication  : Started MallWebsiteApplication in 2.407 seconds (JVM running for 3.059)
+2020-05-13 11:39:12.429  INFO 19816 --- [http-nio-0.0.0.0-8087-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1586308465,1586309950,1587372947] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-05-13 11:39:12.436  INFO 19816 --- [http-nio-0.0.0.0-8087-exec-1] o.a.c.c.C.[.[localhost].[/website]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-13 11:39:12.436  INFO 19816 --- [http-nio-0.0.0.0-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-13 11:39:12.442  INFO 19816 --- [http-nio-0.0.0.0-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-05-13 11:39:12.465  INFO 19816 --- [http-nio-0.0.0.0-8087-exec-1] c.d.m.w.c.SellChannelAddressController   : websiteÈë¿Ú
+2020-05-13 11:39:12.725 DEBUG 19816 --- [http-nio-0.0.0.0-8087-exec-1] c.d.m.d.S.selectAll                      : ==>  Preparing: select id, channel_id, name, mobile_phone, area, address, created_time, created_by, updated_time, update_by, is_delete from sell_channel_address 
+2020-05-13 11:39:12.748 DEBUG 19816 --- [http-nio-0.0.0.0-8087-exec-1] c.d.m.d.S.selectAll                      : ==> Parameters: 
+2020-05-13 11:39:12.791 DEBUG 19816 --- [http-nio-0.0.0.0-8087-exec-1] c.d.m.d.S.selectAll                      : <==      Total: 3

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="jdbc.properties"></properties>
+    <context id="science" targetRuntime="MyBatis3Simple">
+     	<property name="xmlMergeable" value="true" />
+    	<property name="javaMergeable" value="true" />
+        <commentGenerator>
+            <property name="suppressDate" value="false" />
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://172.16.2.180:3306/macauo2odb?autoReconnectForPools=true&amp;mysqlEncoding=utf8mb4&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true"
+                        userId="root"
+                        password="P@ssw0rd">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.dbcoding.mall.model" targetProject="src/main/java">
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src/main/resources"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dbcoding.mall.dao" targetProject="src/main/java"/>
+        <!-- %为全部的表 -->
+        <table tableName="sell_channel">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+    </context>
+</generatorConfiguration>

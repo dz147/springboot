@@ -1,0 +1,46 @@
+server:
+  port: 8085
+  address: 0.0.0.0
+  servlet:
+    context-path: /cms
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.2.180:3306/macauo2odb?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
+    username: root
+    password: P@ssw0rd
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    useGlobalDataSourceStat: true
+    http:
+      encoding:
+        charset: UTF-8
+        enabled: true
+        force: true
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.dbcoding.mall.model
+    configuration:
+      map-underscore-to-camel-case: true
+      default-fetch-size: 100
+logging:
+  level:
+    com.dbcoding.mall.dao.*: debug
+  file:
+    path: E:/tmp/logs/cms
+    max-size: 8MB
+    max-history: 10

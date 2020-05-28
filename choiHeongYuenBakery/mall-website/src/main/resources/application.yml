@@ -1,0 +1,77 @@
+server:
+  port: 8087
+  address: 0.0.0.0
+  servlet:
+    context-path: /website
+spring:
+  redis:
+    database: 0
+    host: 47.106.105.152
+    port: 6379
+    password: marcusmacau.com283898
+    timeout: 3600
+    jedis:
+      pool:
+        max-active: -1
+        max-idle: 50
+        max-wait: 9000
+        min-idle: 0
+        max-total: 1000
+    block-when-exhausted: true
+  cache:
+    redis:
+      use-key-prefix: true
+      key-prefix: dev
+      cache-null-values: false
+      time-to-live: 20s
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.2.180:3306/macauo2odb?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
+    username: root
+    password: P@ssw0rd
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    useGlobalDataSourceStat: true
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      timezone: GMT+8
+      serialization:
+        write-dates-as-timestamps: false
+    http:
+      encoding:
+        charset: UTF-8
+        enabled: true
+        force: true
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.dbcoding.mall.model
+    configuration:
+      map-underscore-to-camel-case: true
+      default-fetch-size: 100
+      #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.dbcoding.mall.dao.*: debug
+  file:
+    path: E:/tmp/logs/website
+    max-size: 8MB
+    max-history: 10
+

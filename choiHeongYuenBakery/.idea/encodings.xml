@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/mall-cms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall-dao/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall-website/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dbcoding.mall.dao.SellChannelMapper" >
+  <resultMap id="BaseResultMap" type="com.dbcoding.mall.model.SellChannel" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="freeze_day" property="freezeDay" jdbcType="INTEGER" />
+    <result column="draw_demand" property="drawDemand" jdbcType="DECIMAL" />
+    <result column="money" property="money" jdbcType="DECIMAL" />
+    <result column="is_open_sell" property="isOpenSell" jdbcType="BIT" />
+    <result column="sell_price" property="sellPrice" jdbcType="DECIMAL" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+    <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="is_self_pickup" property="isSelfPickup" jdbcType="INTEGER" />
+    <result column="is_skip_tencent" property="isSkipTencent" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sell_channel
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.dbcoding.mall.model.SellChannel" >
+    <selectKey resultType="java.lang.String" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sell_channel (id, code, name, 
+      freeze_day, draw_demand, money, 
+      is_open_sell, sell_price, status, 
+      created_time, created_by, updated_time, 
+      updated_by, is_delete, is_self_pickup, 
+      is_skip_tencent)
+    values (#{id,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{freezeDay,jdbcType=INTEGER}, #{drawDemand,jdbcType=DECIMAL}, #{money,jdbcType=DECIMAL}, 
+      #{isOpenSell,jdbcType=BIT}, #{sellPrice,jdbcType=DECIMAL}, #{status,jdbcType=INTEGER}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{createdBy,jdbcType=VARCHAR}, #{updatedTime,jdbcType=TIMESTAMP}, 
+      #{updatedBy,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}, #{isSelfPickup,jdbcType=INTEGER}, 
+      #{isSkipTencent,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.dbcoding.mall.model.SellChannel" >
+    update sell_channel
+    set code = #{code,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      freeze_day = #{freezeDay,jdbcType=INTEGER},
+      draw_demand = #{drawDemand,jdbcType=DECIMAL},
+      money = #{money,jdbcType=DECIMAL},
+      is_open_sell = #{isOpenSell,jdbcType=BIT},
+      sell_price = #{sellPrice,jdbcType=DECIMAL},
+      status = #{status,jdbcType=INTEGER},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      updated_by = #{updatedBy,jdbcType=VARCHAR},
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      is_self_pickup = #{isSelfPickup,jdbcType=INTEGER},
+      is_skip_tencent = #{isSkipTencent,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select id, code, name, freeze_day, draw_demand, money, is_open_sell, sell_price, 
+    status, created_time, created_by, updated_time, updated_by, is_delete, is_self_pickup, 
+    is_skip_tencent
+    from sell_channel
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, code, name, freeze_day, draw_demand, money, is_open_sell, sell_price, 
+    status, created_time, created_by, updated_time, updated_by, is_delete, is_self_pickup, 
+    is_skip_tencent
+    from sell_channel
+  </select>
+</mapper>
